@@ -10,6 +10,8 @@ public class CustomLabel extends Span {
         addClassName(LumoUtility.Margin.Right.SMALL);
         setMaxHeight(null);
         getStyle().set("word-wrap", "break-word");
+        addClassName(LumoUtility.Overflow.SCROLL);
+
 
     }
     public void setWidth(int width){

@@ -3,6 +3,7 @@ package com.lifedrained.metrofood.frontend.views;
 import com.lifedrained.metrofood.data.repo.entity.Position;
 import com.lifedrained.metrofood.frontend.views.widgets.CustomH4;
 import com.lifedrained.metrofood.frontend.views.widgets.CustomLabel;
+import com.lifedrained.metrofood.utils.LumoUtils;
 import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -44,7 +45,7 @@ public class PositionHolder extends VerticalLayout  {
             image.setMaxWidth("260px");
             layout.setAlignItems(Alignment.STRETCH);
             layout.setMaxWidth("260px");
-            layout.setHeight(230*3.2f,Unit.PIXELS);
+            layout.setHeight(230*3.5f,Unit.PIXELS);
 
             StreamResource resource = new StreamResource("position " + position.getName(),  () -> {
                 return getClass().getResourceAsStream("/static/images/"+position.getImgPath());
@@ -63,16 +64,17 @@ public class PositionHolder extends VerticalLayout  {
 
 
             VerticalLayout descriptionLayout = new VerticalLayout(description){{
-                setMaxHeight(260,Unit.PIXELS);
                 addClassNames(LumoUtility.Padding.NONE, LumoUtility.Margin.NONE);
+                LumoUtils.shrink(this);
+                addClassName(LumoUtility.Overflow.SCROLL);
             }};
-            description.addClassNames(LumoUtility.Flex.GROW, LumoUtility.Background.TRANSPARENT);
-
+            description.addClassNames(LumoUtility.Flex.SHRINK, LumoUtility.Background.TRANSPARENT);
             IntegerField count = getIntegerField(position);
+            LumoUtils.grow(count);
 
             VerticalLayout spacer =  new VerticalLayout(){{
-                setHeightFull();
                 addClassNames(LumoUtility.Flex.SHRINK, LumoUtility.Background.TRANSPARENT);
+                addClassNames(LumoUtility.Padding.NONE, LumoUtility.Margin.NONE);
             }};
 
             layout.add(image);
