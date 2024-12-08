@@ -1,10 +1,16 @@
 package com.lifedrained.metrofood.utils;
 
 
+import com.google.gson.internal.NonNullElementWrapperList;
+import com.lifedrained.metrofood.Main;
 import com.lifedrained.metrofood.data.repo.PositionRepo;
 import com.lifedrained.metrofood.data.repo.entity.Position;
+import com.nimbusds.jose.util.StandardCharset;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import oshi.util.FileUtil;
 
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -18,9 +24,7 @@ public class PositionUtils {
         ArrayList<Position> positions = new ArrayList<>();
 
         try {
-
-            String positionsContent = FileUtils.readFileToString(Paths.get("src/main/resources/positions.txt").toFile(),
-                    StandardCharsets.UTF_8);
+            String positionsContent = IOUtils.toString(Main.class.getResourceAsStream("/positions.txt"), StandardCharsets.UTF_8);
             positionsContent = positionsContent.replaceAll("\n", "");
             String[] entries = positionsContent.split(";");
 

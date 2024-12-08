@@ -18,5 +18,5 @@ BonAqua:0.5L:60:drinks:d1.jpg;
 Чай RICH:0.5L:110:drinks:d2.jpg;
 CocaCola:0.5L:110:drinks:d3.jpg;
 Sprite:0.5L:110:drinks:d4.jpg;
-Fanta:0.5L:110:drinks:d5.jpg
+Fanta:0.5L:110:drinks:d5.jpg;
 

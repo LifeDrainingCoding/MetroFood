@@ -63,7 +63,7 @@ public class PositionHolder extends VerticalLayout  {
 
 
             VerticalLayout descriptionLayout = new VerticalLayout(description){{
-                setMaxHeight(400,Unit.PIXELS);
+                setMaxHeight(260,Unit.PIXELS);
                 addClassNames(LumoUtility.Padding.NONE, LumoUtility.Margin.NONE);
             }};
             description.addClassNames(LumoUtility.Flex.GROW, LumoUtility.Background.TRANSPARENT);
