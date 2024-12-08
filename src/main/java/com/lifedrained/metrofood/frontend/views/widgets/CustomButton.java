@@ -1,4 +1,4 @@
-package com.lifedrained.prepjournal.front.views.widgets;
+package com.lifedrained.metrofood.frontend.views.widgets;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;

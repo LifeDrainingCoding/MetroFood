@@ -1,9 +1,9 @@
-package com.lifedrained.prepjournal.front.views.widgets;
+package com.lifedrained.metrofood.frontend.views.widgets;
 
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.theme.lumo.LumoUtility.*;
+import com.vaadin.flow.theme.lumo.LumoUtility.AlignSelf;
+import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 
 
 public class RowWithTxtField extends HorizontalLayout {
@@ -17,6 +17,7 @@ public class RowWithTxtField extends HorizontalLayout {
         label.removeClassName(Margin.Right.LARGE);
         label.addClassName(Margin.Right.SMALL);
         addClassNames(AlignSelf.BASELINE);
+        setMaxWidth(null);
         add(label,textField);
     }
     public String getFieldText(){

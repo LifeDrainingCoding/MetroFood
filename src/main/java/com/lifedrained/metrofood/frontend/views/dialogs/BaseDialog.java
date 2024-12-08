@@ -1,13 +1,9 @@
-package com.lifedrained.prepjournal.front.views.dialogs;
+package com.lifedrained.metrofood.frontend.views.dialogs;
 
-import com.lifedrained.prepjournal.front.interfaces.CheckableFields;
-import com.lifedrained.prepjournal.front.interfaces.OnCloseDialogListener;
-import com.lifedrained.prepjournal.front.interfaces.OnConfirmDialogListener;
-import com.lifedrained.prepjournal.front.views.widgets.CustomButton;
+
+import com.lifedrained.metrofood.frontend.views.widgets.CustomButton;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
-
-import java.util.List;
 
 /**
  *
@@ -15,26 +11,18 @@ import java.util.List;
  *           , а также тип данных возвращаемый {@link #getDataFromFields()}
  */
 
-public abstract class BaseDialog<T> extends Dialog implements CheckableFields<T> {
+public abstract class BaseDialog<T> extends Dialog {
     protected OnConfirmDialogListener<T> confirmListener;
-    protected OnCloseDialogListener<?> closeListener;
     protected CustomButton ok,deny;
-    protected List<T> fieldValues;
 
-    public BaseDialog(OnConfirmDialogListener<T> confirmListener, List<T> fieldValues){
+    public BaseDialog(OnConfirmDialogListener<T> confirmListener){
         this.confirmListener =  confirmListener;
-        this.fieldValues = fieldValues;
         initBtns();
         setButtonListeners();
         setDraggable(true);
     }
-    public void setOnCloseListener(OnCloseDialogListener<?> closeListener){
-        this.closeListener = closeListener;
-    }
-    public boolean isCloseListenerNull(){
-        return closeListener == null;
-    }
-    public abstract List<T> getDataFromFields();
+
+    public abstract T getDataFromFields();
     protected abstract void setButtonListeners();
     private void initBtns(){
         ok = new CustomButton("Сохранить");

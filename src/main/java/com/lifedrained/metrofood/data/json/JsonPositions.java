@@ -11,14 +11,14 @@ import java.util.LinkedHashMap;
 
 @NoArgsConstructor
 @Getter @Setter
-public class OrderJson implements Serializable {
+public class JsonPositions implements Serializable {
 
 
     private double price = 0;
     private int positionsCount = 0;
     private LinkedHashMap<Position, Integer> positions;
 
-    public OrderJson(LinkedHashMap<Position, Integer> positions) {
+    public JsonPositions(LinkedHashMap<Position, Integer> positions) {
         this.positions = positions;
         positions.forEach((position, count) -> {
             positionsCount = positionsCount + count;

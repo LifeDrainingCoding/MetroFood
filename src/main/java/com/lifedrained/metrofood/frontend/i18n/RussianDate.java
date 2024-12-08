@@ -1,4 +1,4 @@
-package com.lifedrained.prepjournal.front.i18n;
+package com.lifedrained.metrofood.frontend.i18n;
 
 import com.vaadin.flow.component.datepicker.DatePicker;
 

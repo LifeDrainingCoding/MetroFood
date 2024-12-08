@@ -1,6 +1,7 @@
-package com.lifedrained.prepjournal.front.views.widgets;
+package com.lifedrained.metrofood.frontend.views.widgets;
 
-import com.lifedrained.prepjournal.front.i18n.RussianDate;
+import com.lifedrained.metrofood.frontend.i18n.RussianDate;
+import com.lifedrained.metrofood.utils.Notify;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 
 import java.sql.Time;
@@ -11,8 +12,8 @@ import java.util.Date;
 
 
 public class CustomDateTimePicker extends DateTimePicker implements HasDateTime {
-    public CustomDateTimePicker(){
-        setLabel("Выборка даты");
+    public CustomDateTimePicker(String lbl){
+        setLabel(lbl);
 
         setDatePickerI18n(new RussianDate());
         setStep(Duration.ofMinutes(5));
@@ -22,6 +23,9 @@ public class CustomDateTimePicker extends DateTimePicker implements HasDateTime 
 
     @Override
     public Date getDate(){
+        if (getValue() == null){
+            Notify.error("Выбрана некорректная дата!");
+        }
         return Date.from(getValue().atZone(ZoneId.systemDefault()).toInstant());
     }
 

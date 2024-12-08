@@ -1,4 +1,4 @@
-package com.lifedrained.prepjournal.Utils;
+package com.lifedrained.metrofood.utils;
 
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;

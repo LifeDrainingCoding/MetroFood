@@ -1,11 +1,11 @@
 package com.lifedrained.metrofood.data;
 
-public enum Categories {
+public enum Category {
     PIZZA("Пицца"), BURGERS("Бургеры"), DRINKS("Напитки" ),
     SHAURMA("Шаурма");
     public final String name;
 
-    Categories(String name) {
+    Category(String name) {
         this.name = name;
     }
 }
